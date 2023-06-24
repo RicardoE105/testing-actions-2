@@ -1,0 +1,32 @@
+{
+  "plugins": [],
+
+  "bump-minor-pre-major": true,
+
+  "draft": false,
+
+  "skip-github-release": false,
+
+  "separate-pull-requests": true,
+
+  "release-search-depth": 400,
+
+  "commit-search-depth": 500,
+
+  "sequential-calls": true,
+
+  "packages": {
+
+    "packages/backend-middleware": {
+      "release-type": "node",
+      "draft": false,
+			"changelog-path": "CHANGELOG.md"
+    },
+
+    "packages/dashboard-backend": {
+      "release-type": "node",
+			"draft": false,
+			"changelog-path": "CHANGELOG.md"
+    }
+  }
+}

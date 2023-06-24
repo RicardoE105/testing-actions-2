@@ -1,0 +1,81 @@
+on:
+  release:
+    types:
+      - released
+permissions:
+  contents: write
+  pull-requests: write
+  jobs:
+    hosted-backend-build:
+      if: contains($GITHUB_REF, 'dashboard-backend')
+      runs-on: ubuntu-latest
+      environment: ALL
+      permissions:
+        id-token: write
+        contents: read
+      steps:
+        - uses: actions/checkout@v3
+        - name: Azure Service Principal Authentication
+          uses: azure/login@v1
+          with:
+            client-id: '${{ secrets.AZURE_CLIENT_ID }}'
+            tenant-id: '${{ secrets.AZURE_TENANT_ID }}'
+            subscription-id: '${{ secrets.AZURE_SUBSCRIPTION_ID }}'
+        - name: Docker login to ACR
+          run: |
+            az acr login -n n8nadminpanel
+        - name: Build and Push container to ACR
+          run: >
+            docker build --build-arg=RELEASE=$GITHUB_SHA \
+              -t n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:$GITHUB_SHA \
+              -t n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:production \
+              -f Dockerfile \
+              .
+            docker push
+            n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:$GITHUB_SHA
+
+            docker push
+            n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:production
+    hosted-backend-deploy:
+      if: contains($GITHUB_REF, 'dashboard-backend')
+      runs-on: ubuntu-latest
+      environment: ALL
+      permissions:
+        id-token: write
+        contents: read
+      needs: build
+      steps:
+        - name: Azure Service Principal Authentication
+          uses: azure/login@v1
+          with:
+            client-id: '${{ secrets.AZURE_CLIENT_ID }}'
+            tenant-id: '${{ secrets.AZURE_TENANT_ID }}'
+            subscription-id: '${{ secrets.AZURE_SUBSCRIPTION_ID }}'
+        - uses: actions/checkout@v3
+        - name: Render helm chart
+          uses: azure/k8s-bake@v2.4
+          with:
+            renderEngine: helm
+            helmChart: ./packages/dashboard-backend/helm
+            overrideFiles: |
+              ./packages/dashboard-backend/helm/values.yaml
+              ./packages/dashboard-backend/helm/values-prod.yaml
+            releaseName: n8n-cloud-dashboard-backend
+            helm-version: v3.10.1
+            silent: 'false'
+            namespace: n8n-cloud-dashboard-prod
+          id: bake
+        - name: Get Kubernetes context
+          uses: azure/aks-set-context@v3
+          with:
+            resource-group: prod-k8s-services
+            cluster-name: prod-k8s-services
+        - name: Deploy helm chart
+          uses: azure/k8s-deploy@v4
+          with:
+            manifests: '${{ steps.bake.outputs.manifestsBundle }}'
+            namespace: n8n-cloud-dashboard-prod
+            pull-images: 'false'
+            images: >
+              n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:${{
+              github.sha }}

@@ -8,6 +8,7 @@ on:
         type: choice
         options:
           - dashboard-backend
+          - epale
 jobs:
   build:
     if: inputs.package == 'dashboard-backend'

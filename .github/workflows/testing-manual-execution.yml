@@ -1,15 +1,89 @@
-name: Manual Inputs
-on: 
+name: Deploy to staging
+on:
   workflow_dispatch:
     inputs:
-      version:
-        description: Bump Version
-        default: v1.0.0
+      package:
         required: true
+        default: "dashboard-backend"
+        type: choice
+        options:
+          - dashboard-backend
 jobs:
-  bump-version:
-    name: Bump Package Version
+  build:
+    if: inputs.package == 'dashboard-backend'
     runs-on: ubuntu-latest
+    environment: ALL
+    permissions:
+      id-token: write
+      contents: read
+
     steps:
-      - name: Example variable usage
-        run: git tag ${{ github.event.inputs.version }}
+      - uses: actions/checkout@v3
+      - name: Azure Service Principal Authentication
+        uses: azure/login@v1
+        # https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure
+        # Trust configured using github ALL environment so any branch can push:
+        # https://stackoverflow.com/questions/71051432/github-actions-azure-oidc-with-subject-value-for-any-branch
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Docker login to ACR
+        run: |
+          az acr login -n n8nadminpanel
+
+      - name: Build and Push container to ACR
+        run: |
+          docker build --build-arg=RELEASE=$GITHUB_SHA \
+            -t n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:$GITHUB_SHA \
+            -t n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:staging \
+            -f Dockerfile \
+            .
+          docker push n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:$GITHUB_SHA
+          docker push n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:staging
+  deploy:
+    if: inputs.package == 'dashboard-backend'
+    runs-on: ubuntu-latest
+    environment: ALL
+    permissions:
+      id-token: write
+      contents: read
+    needs: build
+
+    steps:
+      - name: Azure Service Principal Authentication
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - uses: actions/checkout@v3
+      - name: Render helm chart
+        uses: azure/k8s-bake@v2.4
+        with:
+          renderEngine: "helm"
+          helmChart: "./packages/dashboard-backend/helm"
+          overrideFiles: |
+            ./packages/dashboard-backend/helm/values.yaml
+            ./packages/dashboard-backend/helm/values-stage.yaml
+          releaseName: n8n-cloud-dashboard-backend
+          helm-version: v3.10.1
+          silent: "false"
+          namespace: "n8n-cloud-dashboard-stage"
+        id: bake
+
+      - name: Get Kubernetes context
+        uses: azure/aks-set-context@v3
+        with:
+          resource-group: prod-k8s-services
+          cluster-name: prod-k8s-services
+
+      - name: Deploy helm chart
+        uses: azure/k8s-deploy@v4
+        with:
+          manifests: ${{ steps.bake.outputs.manifestsBundle }}
+          namespace: "n8n-cloud-dashboard-stage"
+          pull-images: "false"
+          images: |
+            n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:${{ github.sha }}

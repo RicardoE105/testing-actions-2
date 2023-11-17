@@ -9,11 +9,12 @@ permissions:
 
 jobs:
   hosted-backend-build:
-      runs-on: ubuntu-latest
-      environment: ALL
-      permissions:
-        id-token: write
-        contents: read
-      steps:
-        - name: Docker login to ACR
-          run: echo $GITHUB_REF
+    if: contains(github.event.release.tag_name, 'dashboard-backend')
+    runs-on: ubuntu-latest
+    environment: ALL
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Docker login to ACR
+        run: echo $GITHUB_REF

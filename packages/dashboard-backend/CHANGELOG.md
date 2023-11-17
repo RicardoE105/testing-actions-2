@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.10.0...dashboard-backend-v1.11.0) (2023-11-17)
+
+
+### Features
+
+* update papa ([#45](https://github.com/RicardoE105/testing-actions-2/issues/45)) ([da9a725](https://github.com/RicardoE105/testing-actions-2/commit/da9a725bae5ab46fdda9c71754257bde4b9e9871))
+
 ## [1.10.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.9.0...dashboard-backend-v1.10.0) (2023-11-17)
 
 

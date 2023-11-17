@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.8.0...dashboard-backend-v1.9.0) (2023-11-17)
+
+
+### Features
+
+* Update app.js ([#40](https://github.com/RicardoE105/testing-actions-2/issues/40)) ([c2760d8](https://github.com/RicardoE105/testing-actions-2/commit/c2760d840c4ae4f532c20358cddb713431ad41c7))
+
 ## [1.8.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.7.0...dashboard-backend-v1.8.0) (2023-11-17)
 
 

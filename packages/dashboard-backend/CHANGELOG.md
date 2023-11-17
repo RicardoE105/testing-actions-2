@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.11.0...dashboard-backend-v1.12.0) (2023-11-17)
+
+
+### Features
+
+* asas ([#48](https://github.com/RicardoE105/testing-actions-2/issues/48)) ([fe54425](https://github.com/RicardoE105/testing-actions-2/commit/fe544251e60d0bb7ebfff7b47a2634a4ac507719))
+
 ## [1.11.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.10.0...dashboard-backend-v1.11.0) (2023-11-17)
 
 

@@ -8,35 +8,35 @@ permissions:
   pull-requests: write
 
 jobs:
-hosted-backend-build:
-    runs-on: ubuntu-latest
-    environment: ALL
-    permissions:
-      id-token: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v3
-      - name: Azure Service Principal Authentication
-        uses: azure/login@v1
-        with:
-          client-id: '${{ secrets.AZURE_CLIENT_ID }}'
-          tenant-id: '${{ secrets.AZURE_TENANT_ID }}'
-          subscription-id: '${{ secrets.AZURE_SUBSCRIPTION_ID }}'
-      - name: Docker login to ACR
-        run: |
-          az acr login -n n8nadminpanel
-      - name: Build and Push container to ACR
-        run: >
-          docker build --build-arg=RELEASE=$GITHUB_SHA \
-            -t n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:$GITHUB_SHA \
-            -t n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:production \
-            -f Dockerfile \
-            .
-          docker push
-          n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:$GITHUB_SHA
+  hosted-backend-build:
+      runs-on: ubuntu-latest
+      environment: ALL
+      permissions:
+        id-token: write
+        contents: read
+      steps:
+        - uses: actions/checkout@v3
+        - name: Azure Service Principal Authentication
+          uses: azure/login@v1
+          with:
+            client-id: '${{ secrets.AZURE_CLIENT_ID }}'
+            tenant-id: '${{ secrets.AZURE_TENANT_ID }}'
+            subscription-id: '${{ secrets.AZURE_SUBSCRIPTION_ID }}'
+        - name: Docker login to ACR
+          run: |
+            az acr login -n n8nadminpanel
+        - name: Build and Push container to ACR
+          run: >
+            docker build --build-arg=RELEASE=$GITHUB_SHA \
+              -t n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:$GITHUB_SHA \
+              -t n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:production \
+              -f Dockerfile \
+              .
+            docker push
+            n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:$GITHUB_SHA
 
-          docker push
-          n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:production
+            docker push
+            n8nadminpanel.azurecr.io/n8n-cloud-dashboard-backend:production
   hosted-backend-deploy:
     runs-on: ubuntu-latest
     environment: ALL

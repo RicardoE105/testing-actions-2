@@ -1,6 +1,6 @@
 on:
   push:
-    tags: [ 'admin-dashboard-v*.*.*' ]
+    tags: [ 'dashboard-backend-v*.*.*' ]
 permissions:
   contents: write
   pull-requests: write

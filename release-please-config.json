@@ -33,6 +33,7 @@
 		},
 		"packages/secrets-api": {
 			"release-type": "python",
+			"component": "secrets-api",
 			"draft": false,
 			"changelog-path": "CHANGELOG.md"
 		}

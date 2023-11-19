@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/RicardoE105/testing-actions-2/compare/v1.1.0...v1.2.0) (2023-11-19)
+
+
+### Features
+
+* Update script.py ([#60](https://github.com/RicardoE105/testing-actions-2/issues/60)) ([23fec92](https://github.com/RicardoE105/testing-actions-2/commit/23fec92404897cddb7b2d31da0b48ddd6476d538))
+
 ## [1.1.0](https://github.com/RicardoE105/testing-actions-2/compare/v1.0.0...v1.1.0) (2023-11-19)
 
 

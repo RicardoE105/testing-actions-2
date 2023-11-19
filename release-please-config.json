@@ -31,7 +31,7 @@
 			"draft": false,
 			"changelog-path": "CHANGELOG.md"
 		},
-		"secrets-api": {
+		"packages/secrets-api": {
 			"release-type": "python",
 			"draft": false,
 			"changelog-path": "CHANGELOG.md"

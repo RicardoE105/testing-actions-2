@@ -30,6 +30,11 @@
       "release-type": "node",
 			"draft": false,
 			"changelog-path": "CHANGELOG.md"
-    }
+    },
+    "secrets-api": {
+			"release-type": "python",
+			"draft": false,
+			"changelog-path": "CHANGELOG.md"
+		}
   }
 }

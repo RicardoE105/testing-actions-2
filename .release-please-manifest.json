@@ -1,5 +1,5 @@
 {
 	"packages/dashboard-backend": "1.14.0",
 	"packages/backend-middleware": "1.2.0",
-	"packages/secrets-api": "1.2.0"
+	"packages/secrets-api": "1.3.0"
 }

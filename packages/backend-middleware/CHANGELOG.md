@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/RicardoE105/testing-actions-2/compare/backend-middleware-v1.2.0...backend-middleware-v1.3.0) (2023-12-04)
+
+
+### Features
+
+* Update app.js ([#70](https://github.com/RicardoE105/testing-actions-2/issues/70)) ([32d5ece](https://github.com/RicardoE105/testing-actions-2/commit/32d5ece62055bfb3415aa4f0c310ceba25f9d41f))
+
 ## [1.2.0](https://github.com/RicardoE105/testing-actions-2/compare/backend-middleware-v1.1.0...backend-middleware-v1.2.0) (2023-11-19)
 
 

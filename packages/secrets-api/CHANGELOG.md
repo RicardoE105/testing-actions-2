@@ -2,7 +2,6 @@
 
 ## [1.3.0](https://github.com/RicardoE105/testing-actions-2/compare/secrets-api-v1.2.0...secrets-api-v1.3.0) (2023-11-19)
 
-
 ### Features
 
 * Update script.py ([#56](https://github.com/RicardoE105/testing-actions-2/issues/56)) ([a993f13](https://github.com/RicardoE105/testing-actions-2/commit/a993f1342c14e7a042e6b8709c54152dcd151c41))

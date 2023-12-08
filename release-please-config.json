@@ -31,6 +31,8 @@
 	{ "type": "build", "section": "Build System" },
 	{ "type": "ci", "section": "Continuous Integration" }
 
+	],
+
 	"packages": {
 
 		"packages/backend-middleware": {

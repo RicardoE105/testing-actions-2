@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.1](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.17.0...dashboard-backend-v1.17.1) (2023-12-08)
+
+
+### Miscellaneous Chores
+
+* Update app.js ([#83](https://github.com/RicardoE105/testing-actions-2/issues/83)) ([f557ede](https://github.com/RicardoE105/testing-actions-2/commit/f557ede49c8a5daaac7935eb778387962814008c))
+
 ## [1.17.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.16.0...dashboard-backend-v1.17.0) (2023-12-08)
 
 

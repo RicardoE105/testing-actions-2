@@ -8,6 +8,14 @@
 * Add new changes ([#78](https://github.com/RicardoE105/testing-actions-2/issues/78)) ([80584d8](https://github.com/RicardoE105/testing-actions-2/commit/80584d8b3ee0cad3df75e6a5115842269525660f))
 * epale papa ([#82](https://github.com/RicardoE105/testing-actions-2/issues/82)) ([ff979df](https://github.com/RicardoE105/testing-actions-2/commit/ff979df03316ee61acd2d98485bec3b519866372))
 
+## [1.4.0](https://github.com/RicardoE105/testing-actions-2/compare/backend-middleware-v1.3.0...backend-middleware-v1.4.0) (2023-12-08)
+
+
+### Features
+
+* Add new changes ([#78](https://github.com/RicardoE105/testing-actions-2/issues/78)) ([80584d8](https://github.com/RicardoE105/testing-actions-2/commit/80584d8b3ee0cad3df75e6a5115842269525660f))
+* epale papa ([#82](https://github.com/RicardoE105/testing-actions-2/issues/82)) ([ff979df](https://github.com/RicardoE105/testing-actions-2/commit/ff979df03316ee61acd2d98485bec3b519866372))
+
 ## [1.3.0](https://github.com/RicardoE105/testing-actions-2/compare/backend-middleware-v1.2.0...backend-middleware-v1.3.0) (2023-12-08)
 ## [1.3.0](https://github.com/RicardoE105/testing-actions-2/compare/backend-middleware-v1.2.0...backend-middleware-v1.3.0) (2023-12-04)
 

@@ -10,7 +10,7 @@
 
 	"skip-github-release": false,
 
-	"separate-pull-requests": true,
+	"separate-pull-requests": false,
 
 	"release-search-depth": 400,
 

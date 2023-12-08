@@ -10,6 +10,4 @@ console.log('testinasasasg5');
 
 console.log('testongpapa')
 
-
-
 console.log('shore')

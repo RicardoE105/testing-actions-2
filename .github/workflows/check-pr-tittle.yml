@@ -8,8 +8,7 @@ on:
       - synchronize
     branches:
       - main
-    branches-ignore:
-      - release-please--branches--master--components--**
+      - '!release-please--branches--master--components--**'
 
 jobs:
   main:

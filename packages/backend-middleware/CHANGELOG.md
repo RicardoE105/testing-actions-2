@@ -1,5 +1,6 @@
 # Changelog
 
+## [1.3.0](https://github.com/RicardoE105/testing-actions-2/compare/backend-middleware-v1.2.0...backend-middleware-v1.3.0) (2023-12-08)
 ## [1.3.0](https://github.com/RicardoE105/testing-actions-2/compare/backend-middleware-v1.2.0...backend-middleware-v1.3.0) (2023-12-04)
 
 

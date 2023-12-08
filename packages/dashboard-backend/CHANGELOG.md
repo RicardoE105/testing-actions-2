@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.17.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.16.0...dashboard-backend-v1.17.0) (2023-12-08)
+
+
+### Features
+
+* Add new changes ([#78](https://github.com/RicardoE105/testing-actions-2/issues/78)) ([80584d8](https://github.com/RicardoE105/testing-actions-2/commit/80584d8b3ee0cad3df75e6a5115842269525660f))
+* epale papa ([#82](https://github.com/RicardoE105/testing-actions-2/issues/82)) ([ff979df](https://github.com/RicardoE105/testing-actions-2/commit/ff979df03316ee61acd2d98485bec3b519866372))
+
 ## [1.16.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.15.0...dashboard-backend-v1.16.0) (2023-12-08)
 
 

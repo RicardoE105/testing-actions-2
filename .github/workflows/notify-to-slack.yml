@@ -9,14 +9,16 @@ jobs:
     name: Check labels
     runs-on: ubuntu-latest
     steps:
-      - uses: docker://agilepathway/pull-request-label-checker:latest
+      - id: preview_label_check
+        uses: docker://agilepathway/pull-request-label-checker:latest
         with:
           all_of: 'autorelease: pending,notify-to-slack'
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           allow_failure: true
+          if: ${{ steps.preview_label_check.outputs.label_check == 'success' }}
+          run: exit 1
 
   notify-to-slack:
-    # if: contains(github.event.pull_request.labels.*.name, 'notify-to-slack') && contains(github.event.pull_request.labels.*.name, 'autorelease')
     runs-on: ubuntu-latest
     steps:
       - uses: fjogeleit/http-request-action@v1

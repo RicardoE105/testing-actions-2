@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   notify-to-slack:
-    if: contains(github.event.pull_request.labels.*.name, 'notify-slack') && contains(github.event.pull_request.labels.*.name, 'autorelease')
+    if: contains(github.event.pull_request.labels.*.name, 'notify-to-slack') && contains(github.event.pull_request.labels.*.name, 'autorelease')
     runs-on: ubuntu-latest
     steps:
       - uses: fjogeleit/http-request-action@v1

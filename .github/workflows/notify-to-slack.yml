@@ -1,0 +1,16 @@
+name: ExampleWorkflow
+on:  
+  pull_request:
+    types: [labeled]
+    branches:
+      - main
+jobs:
+  notify-to-slack:
+    if: contains(github.event.pull_request.labels.*.name, 'notify-slack') && contains(github.event.pull_request.labels.*.name, 'autorelease')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://ricardoaccount2000.app.n8n.cloud/webhook-test/21657086-0cfc-41f9-ae89-9aff434e39cf'
+          method: 'POST'
+          data: ${{ github.event }}

@@ -9,18 +9,6 @@ jobs:
     name: Check labels
     runs-on: ubuntu-latest
     steps:
-      - id: preview_label_check
-        uses: docker://agilepathway/pull-request-label-checker:latest
-        with:
-          all_of: 'autorelease: pending,notify-to-slack'
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          allow_failure: true
-      - if: steps.preview_label_check.outputs.label_check == 'success'
-        run: exit 1
-
-  notify-to-slack:
-    runs-on: ubuntu-latest
-    steps:
       - uses: fjogeleit/http-request-action@v1
         with:
           url: 'https://ricardoaccount2000.app.n8n.cloud/webhook-test/21657086-0cfc-41f9-ae89-9aff434e39cf'

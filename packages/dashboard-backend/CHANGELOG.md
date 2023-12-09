@@ -1,5 +1,48 @@
 # Changelog
 
+## [1.21.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.20.0...dashboard-backend-v1.21.0) (2023-12-08)
+
+
+### Features
+
+* Update app.js ([#92](https://github.com/RicardoE105/testing-actions-2/issues/92)) ([2e668b0](https://github.com/RicardoE105/testing-actions-2/commit/2e668b000bc01c4f6adaaac4e669afa9873e04b4))
+
+## [1.20.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.19.0...dashboard-backend-v1.20.0) (2023-12-08)
+
+
+### Features
+
+* Update app.js ([#90](https://github.com/RicardoE105/testing-actions-2/issues/90)) ([5ab28b0](https://github.com/RicardoE105/testing-actions-2/commit/5ab28b00c2e801604d108be1fbbf2fb39f7a812b))
+
+## [1.19.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.18.0...dashboard-backend-v1.19.0) (2023-12-08)
+
+
+### Features
+
+* Update app.js ([#88](https://github.com/RicardoE105/testing-actions-2/issues/88)) ([085dfa5](https://github.com/RicardoE105/testing-actions-2/commit/085dfa565b6dc939ebcbe95ae64234d025bbca55))
+
+## [1.18.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.17.1...dashboard-backend-v1.18.0) (2023-12-08)
+
+
+### Features
+
+* Update app.js ([#86](https://github.com/RicardoE105/testing-actions-2/issues/86)) ([a57904f](https://github.com/RicardoE105/testing-actions-2/commit/a57904fb8576065b33f39aa4d3a6e55ce5e503c2))
+
+## [1.17.1](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.17.0...dashboard-backend-v1.17.1) (2023-12-08)
+
+
+### Miscellaneous Chores
+
+* Update app.js ([#83](https://github.com/RicardoE105/testing-actions-2/issues/83)) ([f557ede](https://github.com/RicardoE105/testing-actions-2/commit/f557ede49c8a5daaac7935eb778387962814008c))
+
+## [1.17.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.16.0...dashboard-backend-v1.17.0) (2023-12-08)
+
+
+### Features
+
+* Add new changes ([#78](https://github.com/RicardoE105/testing-actions-2/issues/78)) ([80584d8](https://github.com/RicardoE105/testing-actions-2/commit/80584d8b3ee0cad3df75e6a5115842269525660f))
+* epale papa ([#82](https://github.com/RicardoE105/testing-actions-2/issues/82)) ([ff979df](https://github.com/RicardoE105/testing-actions-2/commit/ff979df03316ee61acd2d98485bec3b519866372))
+
 ## [1.16.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.15.0...dashboard-backend-v1.16.0) (2023-12-08)
 
 

@@ -19,13 +19,13 @@ console.log('asasas')
 
 console.log('nojodas papa')
 
-console.log('testing11')
+console.log('testinasasag11')
 
 console.log('testing12')
 
 console.log('testing13')
 
-console.log('testing14')
+console.log('testasasasasing14')
 
 console.log('testing15')
 
@@ -41,6 +41,15 @@ console.log('adding a new testing option')
 
 console.log('adding papa');
 
-console.log('update package');
+console.log('update asasaspackage');
 
 console.log('update packageasas');
+console.log('chore')
+
+console.log('nojdoas papa')
+
+console.log('epalepapa')
+
+console.log('update')
+
+console.log('epalepapa')

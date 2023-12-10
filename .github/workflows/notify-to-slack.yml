@@ -11,10 +11,8 @@ jobs:
     environment: ALL
     steps:
       - uses: fjogeleit/http-request-action@v1
-        env:
-          N8N_SLACK_NOTIFICATION_WORKFLOW: ${{ secrets.N8N_SLACK_NOTIFICATION_WORKFLOW }}
         with:
           url: 'https://ricardoaccount2000.app.n8n.cloud/webhook-test/21657086-0cfc-41f9-ae89-9aff434e39cf'
           method: 'POST'
-          customHeaders: '{ "token": "$N8N_SLACK_NOTIFICATION_WORKFLOW" }'
+          customHeaders: '{ "token": "${{ secrets.N8N_SLACK_NOTIFICATION_WORKFLOW }}" }'
           data: '{ "labels": ${{ toJSON(github.event.pull_request.labels) }}, "prNumber": ${{ github.event.number }} }'

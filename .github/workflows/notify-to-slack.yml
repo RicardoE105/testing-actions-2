@@ -8,6 +8,7 @@ jobs:
   check_labels:
     name: Check labels
     runs-on: ubuntu-latest
+    environment: ALL
     steps:
       - uses: fjogeleit/http-request-action@v1
         with:

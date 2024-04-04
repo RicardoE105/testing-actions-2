@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.23.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.22.0...dashboard-backend-v1.23.0) (2024-04-04)
+
+
+### Features
+
+* Update app.js ([#100](https://github.com/RicardoE105/testing-actions-2/issues/100)) ([721dac2](https://github.com/RicardoE105/testing-actions-2/commit/721dac220a9b5b9befab8adec1e501ec9f4e868d))
+* Update app.js ([#101](https://github.com/RicardoE105/testing-actions-2/issues/101)) ([a8862db](https://github.com/RicardoE105/testing-actions-2/commit/a8862dbc05e69567845226eb92993442856fd3bb))
+* Update app.js ([#102](https://github.com/RicardoE105/testing-actions-2/issues/102)) ([a348142](https://github.com/RicardoE105/testing-actions-2/commit/a34814200174f177f874480cfeac42a1f2f80576))
+* Update app.js ([#99](https://github.com/RicardoE105/testing-actions-2/issues/99)) ([82e38ef](https://github.com/RicardoE105/testing-actions-2/commit/82e38ef0180b501e5380cd2e85e402e5c7b475aa))
+
+
+### Bug Fixes
+
+* Update app.js ([#98](https://github.com/RicardoE105/testing-actions-2/issues/98)) ([452a89e](https://github.com/RicardoE105/testing-actions-2/commit/452a89e4ccf22d7dc241502b164f53800ae72a73))
+
 ## [1.22.0](https://github.com/RicardoE105/testing-actions-2/compare/dashboard-backend-v1.21.0...dashboard-backend-v1.22.0) (2023-12-09)
 
 
